@@ -2,37 +2,71 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nosso Casamento</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Casamento Matheus & Anny</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>Nome dos Noivos</h1>
-    <p>Data do Casamento - Local</p>
-  </header>
 
-  <section id="historia">
+<header id="home">
+  <div class="overlay"></div>
+  <img src="logo.png" alt="Logo do Casamento" class="logo">
+</header>
+
+<nav class="navbar">
+  <ul>
+    <li><a href="#historia">Nossa História</a></li>
+    <li><a href="#cerimonia">Local da Cerimônia</a></li>
+    <li><a href="#festa">Local da Festa</a></li>
+    <li><a href="#rsvp">RSVP</a></li>
+    <li><a href="#presentes">Lista de Presentes</a></li>
+    <li><a href="#galeria">Galeria de Fotos</a></li>
+  </ul>
+</nav>
+
+<main>
+  <section id="historia" data-aos="fade-up">
     <h2>Nossa História</h2>
-    <p>Conte um pouco sobre vocês aqui ❤️</p>
+    <p>Conte aqui a história de vocês!</p>
   </section>
 
-  <section id="informacoes">
-    <h2>Informações da Cerimônia</h2>
-    <p>Local, data e horário.</p>
+  <section id="cerimonia" data-aos="fade-up">
+    <h2>Local da Cerimônia</h2>
+    <p>Endereço e detalhes da cerimônia.</p>
   </section>
 
-  <section id="confirmacao">
-    <h2>Confirme sua presença</h2>
-    <form>
-      <input type="text" placeholder="Seu Nome" required>
-      <input type="email" placeholder="Seu E-mail" required>
-      <button type="submit">Confirmar</button>
-    </form>
+  <section id="festa" data-aos="fade-up">
+    <h2>Local da Festa</h2>
+    <p>Endereço e detalhes da festa.</p>
   </section>
 
-  <footer>
-    <p>Com amor, Nome dos Noivos 💖</p>
-  </footer>
+  <section id="rsvp" data-aos="fade-up">
+    <h2>Confirme sua Presença</h2>
+    <p>Formulário para confirmação.</p>
+  </section>
+
+  <section id="presentes" data-aos="fade-up">
+    <h2>Lista de Presentes</h2>
+    <p>Link ou informações sobre a lista de presentes.</p>
+  </section>
+
+  <section id="galeria" data-aos="fade-up">
+    <h2>Galeria de Fotos</h2>
+    <p>Fotos do casal ou momentos especiais.</p>
+  </section>
+</main>
+
+<footer>
+  <div id="countdown"></div>
+  <p>Com amor, Matheus & Anny 💖</p>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  AOS.init();
+</script>
+
 </body>
 </html>
