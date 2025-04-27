@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirme sua presença - Matheus & Anny</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+<header>
+  <div class="header-overlay"></div>
+  <div class="header-content">
+    <h1>ANNY & MATHEUS</h1>
+  </div>
+</header>
+
+<nav class="navbar">
+  <div class="navbar-logo">
+      <a href="/">
+        <img src="img/logo.png" alt="Logo Matheus e Anny" class="logo-img">
+      </a>
+    </div>
+  <ul class="navbar-links">
+    <li><a href="home.html" id="btn-home"><b>Seja Bem-vindo</b></a></li>
+    <li><a href="nossa-historia.html" id="btn-hist">Nossa História</a></li>
+    <li><a id="btn-conf">Confirme a sua presença</a></li>
+    <li><a href="gift.html" id="btn-gift">Lista de Presentes</a></li>
+    <li><a href="list.html" id="btn-list">Galeria</a></li>
+  </ul>
+</nav>
+
+<main>
+  <section   class="rsvp-section" id="home" data-aos="fade-up">
+    <h2>Vem com a gente ou vai perder a festa?</h2>
+    <p>Para confirmar a sua presença no casamento só precisa escrever o seu nome e clicar em Pesquisar. Aparecerá o seu nome e só terá que dizer se estará ou não no casamento</p>
+    <div class="rsvp-container">
+      <!-- Coluna 1: Mapa Cerimônia -->
+      <div class="rsvp-column">
+        <h2>Local da Cerimônia</h2>
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d405.4361499095662!2d-36.67247684175122!3d-9.751929425712103!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x705d50031bd2d31%3A0xa4da92e99eb0710c!2sCapela%20de%20S%C3%A3o%20Pedro!5e0!3m2!1spt-BR!2sbr!4v1745735286487!5m2!1spt-BR!2sbr"
+          width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+      <!-- Coluna 2: Formulário de Confirmação -->
+      <div class="rsvp-column">
+        <h2>Local da Recepção</h2>
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d281.23275944601943!2d-36.67484667382041!3d-9.736268439501634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x705d5f4cfe4c631%3A0x5d12b392197ee46b!2sHon%C3%B3rio%20Fest!5e0!3m2!1spt-BR!2sbr!4v1745735076741!5m2!1spt-BR!2sbr"
+          width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+      <!-- Coluna 3: Mapa Festa -->
+      <div class="rsvp-column">
+        <h2>Confirme sua Presença</h2>
+        <form class="rsvp-form" id="confirmacao-form" action="https://formspree.io/f/xblolpll" method="POST">
+          <input type="text" name="nome" placeholder="Seu nome completo" required>
+          <select name="presenca" required>
+            <option value="sim">Irei comparecer</option>
+            <option value="nao">Não irei comparecer</option>
+          </select>
+          <textarea name="mensagem" placeholder="(Opcional)"></textarea>
+          <button type="submit">Confirmar</button>
+        </form>
+      </div>
+    </div>
+    <div class="spacer"></div>
+  </section>
+</main>
+
+<footer>
+  <h2>CONTAGEM REGRESSIVA</h2>
+  <div id="countdown"></div>
+  <h3>Com amor, Matheus & Anny 💖</h3>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  AOS.init();
+</script>
+
+</body>
+</html>

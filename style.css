@@ -7,15 +7,39 @@
   
   body {
     font-family: 'Georgia', serif;
-    background-color: #fff8f0;
+    background-color: #ffffff;
     color: #5a3e36;
   }
   
+  p {
+    font-size: 16px;  
+    color: #5a3e36;  
+    margin-bottom: 20px;
+    font-size: 25px;
+    text-align: left;
+  }
+
+  p2 {
+    font-size: 16px;  
+    color: #5a3e36;  
+    margin-bottom: 20px;
+    font-size: 25px;
+    text-align: right;
+  }
+
+  p3 {
+    font-size: 16px;  
+    color: #5a3e36;  
+    margin-bottom: 20px;
+    font-size: 25px;
+    text-align: left;
+  }
+
   /* Header */
   header {
     position: relative;
     height: 25vh;
-    background: url('background.jpg') center/cover no-repeat;
+    background: url('img/background.jpg') center/cover no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,9 +65,10 @@
     letter-spacing: 2px;
   }
   
-  /* Navbar */
+  /* Navbar class="page-section" */ 
   .navbar {
-    background-color: #fa9292;
+    position: fixed;
+    background-color: #fae294;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -51,12 +76,13 @@
     position: sticky;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.342);
   }
   
   .navbar-logo {
     font-weight: bold;
     font-size: 1.5em;
-    color: white;
+    color: rgb(0, 0, 0);
   }
   
   .navbar-links {
@@ -67,16 +93,25 @@
   
   .navbar-links a {
     text-decoration: none;
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 0.9em;
     font-weight: bold;
     letter-spacing: 1px;
+    padding: 10px 20px; /* Espaçamento interno, criando um "botão" */
+    border-radius: 5px; /* Bordas arredondadas */
+    transition: background-color 0.3s ease, transform 0.1s ease; /* Transição suave para a cor e para o efeito de pressionado */
   }
   
   .navbar-links a:hover {
-    text-decoration: underline;
+    background-color: #ffde72; 
+    text-decoration: none;
   }
   
+  .navbar-links a:active {
+  background-color: #fcce38;
+  transform: scale(0.98); /* Efeito de "pressão", diminuindo um pouco o botão */
+  }
+
   /* Sections */
   main section {
     padding: 80px 20px;
@@ -88,13 +123,23 @@
     margin-bottom: 20px;
   }
   
+  section h3 {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+
   /* Footer */
   footer {
-    background-color: #fa9292;
+    position: fixed;
     padding: 30px;
     text-align: center;
-    margin-top: 40px;
-    color: white;
+    margin-top: 10px;
+    color: #000000;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #fae294;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.342);
   }
   
   #countdown {
@@ -102,3 +147,112 @@
     margin-bottom: 10px;
   }
   
+  .page-section {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 20px;
+    text-align: center;
+  }
+  
+  .page-section h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+
+  .logo-img {
+    height: 50px;
+    width: auto;
+  }
+
+  /* Estilo para o botão após o Easter Egg ser ativado */
+#btn-home.easter-egg {
+  background-color: rgb(255, 202, 57);
+  color: white;
+  animation: shake 1s ease-in-out infinite;
+}
+
+#btn-home.easter-egg2 {
+  background-color: #524e4e;
+  color: white;
+  animation: shake 1s ease-in-out infinite;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-20px); }
+  50% { transform: translateX(20px); }
+  75% { transform: translateX(-20px); }
+  100% { transform: translateX(0); }
+}
+
+.rsvp-section {
+  padding: 100px 20px 70px; /* espaço pro header e footer */
+}
+
+.rsvp-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.rsvp-column {
+  flex: 1 1 300px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.rsvp-form input, 
+.rsvp-form select, 
+.rsvp-form textarea {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.rsvp-form button {
+  background-color: #f4a261;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.rsvp-form button:hover {
+  background-color: #e76f51;
+}
+
+
+.spacer {
+  height: 100px;
+}
+
+
+
+/* Animação de fade-in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mensagem-animada {
+  animation: fadeIn 1s ease forwards;
+}
