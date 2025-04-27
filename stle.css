@@ -1,0 +1,44 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #fff8f0;
+    color: #5a3e36;
+  }
+  
+  header {
+    background-color: #ffe0e0;
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  section {
+    padding: 2rem;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  button {
+    background-color: #ff8c94;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #e76f74;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #ffe0e0;
+  }
+  
