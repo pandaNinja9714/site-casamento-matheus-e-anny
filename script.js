@@ -1,6 +1,6 @@
 // Contagem Regressiva
 const countdown = document.getElementById('countdown');
-const weddingDate = new Date("January 24, 2026 00:00:00").getTime();
+const weddingDate = new Date("January 24, 2026 10:00:00").getTime();
 
 function updateCountdown() {
   const now = new Date().getTime();
