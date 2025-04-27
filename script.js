@@ -71,13 +71,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-
 const form = document.getElementById('confirmacao-form');
 const mensagemSucesso = document.getElementById('mensagem-sucesso');
 
 form.addEventListener('submit', function(event) {
   event.preventDefault(); // Impede o envio normal
   const formData = new FormData(form);
+  const presenca = form.querySelector('select[name="presenca"]').value; // Lê a resposta
 
   fetch(form.action, {
     method: form.method,
@@ -89,16 +89,32 @@ form.addEventListener('submit', function(event) {
       mensagemSucesso.style.display = 'block';
       mensagemSucesso.classList.add('mensagem-animada');
 
-      // 🎉 Ativa confete
-      confetti({
-        particleCount: 200,
-        spread: 70,
-        origin: { y: 0.6 }
-      });
+      if (presenca === "sim") {
+        mensagemSucesso.innerHTML = `
+          <h2>🎉 Obrigado por confirmar sua presença!</h3>
+          <p>Estamos muito felizes em compartilhar esse momento com você!</p>
+        `;
+        // Ativa o confete só para quem confirmou
+        confetti({
+          particleCount: 200,
+          spread: 70,
+          origin: { y: 0.6 }
+        });
+      } else {
+        mensagemSucesso.innerHTML = `
+          <h2>💔 Sentiremos sua falta!</h3>
+          <p>Agradecemos por avisar. Estaremos pensando em você nesse dia tão especial.</p>
+        `;
+        // Não ativa o confete
+      }
+      
     } else {
-      alert('Erro no envio, tente novamente!1');
+      console.error('Resposta não OK:', response.status, response.statusText);
+      alert('Erro no envio, tente novamente!');
     }
   }).catch(error => {
-    alert('Erro no envio, tente novamente!2');
+    console.error('Erro no envio:', error);
+    alert('Erro no envio, tente novamente!');
   });
 });
+

@@ -14,6 +14,7 @@
   <div class="header-overlay"></div>
   <div class="header-content">
     <h1>ANNY & MATHEUS</h1>
+    <p>Arapiraca - AL</p>
   </div>
 </header>
 
@@ -57,6 +58,7 @@
       <div class="rsvp-column">
         <h2>Confirme sua Presença</h2>
         <form class="rsvp-form" id="confirmacao-form" action="https://formspree.io/f/xblolpll" method="POST">
+          <input type="text" name="_honey" style="display:none">
           <input type="text" name="nome" placeholder="Seu nome completo" required>
           <select name="presenca" required>
             <option value="sim">Irei comparecer</option>
@@ -65,6 +67,13 @@
           <textarea name="mensagem" placeholder="(Opcional)"></textarea>
           <button type="submit">Confirmar</button>
         </form>
+
+      <!-- Mensagem de sucesso escondida -->
+      <div id="mensagem-sucesso" style="display: none;">
+        <h2>🎉 Obrigado por confirmar sua presença!</h2>
+        <p>Estamos muito felizes em compartilhar esse momento com você!</p>
+      </div>
+
       </div>
     </div>
     <div class="spacer"></div>
@@ -77,6 +86,7 @@
   <h3>Com amor, Matheus & Anny 💖</h3>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 <script src="script.js"></script>
 <script>
   AOS.init();
